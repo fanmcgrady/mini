@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link href="index.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="text" class="text-style">
+    Hello World！
+</div>
+
+<div class="text-style" id="text2">
+    请求结果是：
+</div>
+
+<input type="text" id="id"/>
+<button onclick="getRemoteData()" class="btn btn-danger">点击请求后端数据</button>
+
+<div class="table-style">
+    <table id="test-table" border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+</div>
+
+<button onclick="addTR()">表格添加</button>
+</body>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script src="index.js"></script>
+</html>

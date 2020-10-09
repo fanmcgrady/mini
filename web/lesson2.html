@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="queryContainer" class="container">
+
+    <div class="alert alert-info fade in">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Heads up!</strong> 本系统供《微信移动终端开发》课程的同学们填写每节课意见！enjoy it！
+    </div>
+
+    <div class="form-signin">
+        <h3 class="form-signin-heading">学号</h3>
+        <input type="text" class="input-block-level" placeholder="学号">
+
+        <h3 class="form-signin-heading">本节课意见</h3>
+        <textarea class="input-block-level" rows="3" placeholder="50字以上的内容"></textarea>
+
+        <input class="btn btn-large btn-primary" type="button" value="查询" onclick="queryRank()">
+    </div>
+
+</div>
+
+</body>
+</html>
