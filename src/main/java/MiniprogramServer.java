@@ -1,5 +1,6 @@
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
+import servlet.CalculateServlet;
 import servlet.HelloServlet;
 
 public class MiniprogramServer {
@@ -18,6 +19,7 @@ public class MiniprogramServer {
             server.setHandler(context);
 
             context.addServlet(HelloServlet.class, "/hello");
+            context.addServlet(CalculateServlet.class, "/calc");
 
             server.start();
             server.join();
