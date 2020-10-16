@@ -6,7 +6,7 @@
 
 ### 1、自我介绍
 
-[方智阳](C:\Users\fanmc\OneDrive\个人\奖状\好未来奖\附件：个人情况目录.pdf)，13550345266
+[方智阳](C:\Users\fanmc\OneDrive\个人\奖状\好未来奖\附件：个人情况目录.pdf)，fangzhiyang@scu.edu.cn
 
 ### 2、课程历史
 
