@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 200px 0;
+            box-sizing: border-box;
+        }
+
+        .userinfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .userinfo-avatar {
+            width: 128px;
+            height: 128px;
+            margin: 20px;
+            border-radius: 50%;
+        }
+
+        .userinfo-nickname {
+            color: #aaa;
+        }
+
+        .usermotto {
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="userinfo">
+        <button> 获取头像昵称</button>
+    </div>
+    <div class="usermotto">
+        <span class="user-motto">{{motto}}</span>
+    </div>
+</div>
+</body>
+
+</html>

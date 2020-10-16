@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="height: 600px;width: 100%"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/dist/echarts.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    getRemoteData();
+
+    function getRemoteData() {
+        $.ajax({
+            url: "http://localhost:8888/echarts",
+            type: 'GET',
+
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (result) {
+                console.log(JSON.stringify(result));
+            }
+        })
+    }
+
+    function initEcharts(xData, yData) {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: xData
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: yData,
+                type: 'bar',
+                showBackground: true,
+                backgroundStyle: {
+                    color: 'rgba(220, 220, 220, 0.8)'
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+</script>
+</html>
