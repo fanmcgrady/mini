@@ -109,3 +109,10 @@
 1. 略读小程序文档结构 - 字典
 1. 介绍微信小程序HelloWorld
 1. 使用web-view标签简单模拟微信小程序HelloWorld程序
+
+## 第四课
+
+1. 梳理目前学到的技术，流程图
+1. Python后端写法，Python爬虫写法
+1. 回顾前端组件echarts使用
+1. 介绍微信小程序HelloWorld
