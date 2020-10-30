@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="width:100%;height: 600px;"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/dist/echarts.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    getRemoteData();
+
+    function getRemoteData() {
+        $.ajax({
+            url: "http://localhost:8888/echarts-test",
+            type: 'GET',
+
+            success: function (result) {
+                initEcharts(result.xData, result.yData);
+            },
+            error: function (result) {
+                console.log(JSON.stringify(result));
+            }
+        })
+    }
+
+    function initEcharts(xData, yData) {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 直方图
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: xData
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: yData,
+                type: 'bar',
+                showBackground: true,
+                backgroundStyle: {
+                    color: 'rgba(220, 220, 220, 0.8)'
+                }
+            }]
+        };
+
+        // 饼图
+        var option2 = {
+            title: {
+                text: '大学生保密教育情况调查统计',
+                subtext: '政治面貌分布',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['男：321人（67.6%）', '女：154人（32.4%）']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        {value: 321, name: '男：321人（67.6%）'},
+                        {value: 154, name: '女：154人（32.4%）'}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        var option3 = {
+            title: {
+                top: 30,
+                left: 'center',
+                text: '2016年某人每天的步数'
+            },
+            tooltip: {},
+            visualMap: {
+                min: 0,
+                max: 10000,
+                type: 'piecewise',
+                orient: 'horizontal',
+                left: 'center',
+                top: 65,
+                textStyle: {
+                    color: '#000'
+                }
+            },
+            calendar: {
+                top: 120,
+                left: 30,
+                right: 30,
+                cellSize: ['auto', 13],
+                range: '2016',
+                itemStyle: {
+                    borderWidth: 0.5
+                },
+                yearLabel: {show: false}
+            },
+            series: {
+                type: 'heatmap',
+                coordinateSystem: 'calendar',
+                data: getVirtulData(2016)
+            }
+        };
+
+        myChart.setOption(option3);
+    }
+
+    function getVirtulData(year) {
+        year = year || '2017';
+        var date = +echarts.number.parseDate(year + '-01-01');
+        var end = +echarts.number.parseDate((+year + 1) + '-01-01');
+        var dayTime = 3600 * 24 * 1000;
+        var data = [];
+        for (var time = date; time < end; time += dayTime) {
+            data.push([
+                echarts.format.formatTime('yyyy-MM-dd', time),
+                Math.floor(Math.random() * 10000)
+            ]);
+        }
+        return data;
+    }
+</script>
+</html>

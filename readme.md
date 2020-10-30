@@ -116,3 +116,12 @@
 1. Python后端写法，Python爬虫写法
 1. 回顾前端组件echarts使用
 1. 介绍微信小程序HelloWorld
+    - wx.getStorageSync
+    - wx.getSetting
+    - wx.getUserInfo
+    - view -> div
+    - button -> button
+    - image -> img
+    - text -> span
+    - bindtap -> onclick
+    - wx.navigateTo

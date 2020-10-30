@@ -14,11 +14,11 @@
 
     function getRemoteData() {
         $.ajax({
-            url: "http://localhost:8888/echarts",
+            url: "http://localhost:8889/echarts-test",
             type: 'GET',
 
             success: function (result) {
-                console.log(result);
+                initEcharts(result.xData, result.yData);
             },
             error: function (result) {
                 console.log(JSON.stringify(result));
