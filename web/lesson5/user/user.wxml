@@ -1,0 +1,35 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+
+	<view class="list">
+		<view class="list-item">
+			<text>数据库用法</text>
+		</view>
+    <view class="list-item">
+      <text class="request-text">请求结果：{{result}}</text>
+    </view>
+
+	</view>
+
+	<view class="guide">
+    <view class="nav">
+      <button class="prev" size="mini" type="default" bindtap="onAdd">增加</button>
+      <button class="prev" size="mini" type="default" bindtap="onQuery">查询</button>
+      <button class="prev" size="mini" type="default" bindtap="onUpdate">修改</button>
+      <button class="prev" size="mini" type="default" bindtap="onDelete">删除</button>
+    </view>
+	</view>
+
+  <view>
+    <text>姓名</text>
+    <input bindinput="bindname" type="text" name="username" placeholder="请输入姓名"></input>
+    <text>页面中的姓名是：{{username}}</text>
+
+  </view>
+<!-- 
+  <form bindsubmit="loginForm">
+    <text>姓名</text>
+    <input type="text" name='username'></input>
+    <button form-type="submit">提交</button>
+  </form> -->
+</view>
